@@ -30,12 +30,15 @@ class Ui_ImageViewer
 public:
     QAction *actionOpen;
     QAction *actionClose;
+    QAction *actionMirror;
+    QAction *actionReversed_colours;
     QWidget *centralWidget;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QLabel *label;
     QMenuBar *menuBar;
     QMenu *menuFile;
+    QMenu *menuEdit;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -48,6 +51,10 @@ public:
         actionOpen->setObjectName(QStringLiteral("actionOpen"));
         actionClose = new QAction(ImageViewer);
         actionClose->setObjectName(QStringLiteral("actionClose"));
+        actionMirror = new QAction(ImageViewer);
+        actionMirror->setObjectName(QStringLiteral("actionMirror"));
+        actionReversed_colours = new QAction(ImageViewer);
+        actionReversed_colours->setObjectName(QStringLiteral("actionReversed_colours"));
         centralWidget = new QWidget(ImageViewer);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setMinimumSize(QSize(600, 347));
@@ -58,18 +65,21 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setEnabled(false);
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 359, 229));
-        label = new QLabel(scrollAreaWidgetContents);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 20, 359, 189));
-        label->setScaledContents(true);
         scrollArea->setWidget(scrollAreaWidgetContents);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(400, 120, 359, 189));
+        label->setScaledContents(true);
         ImageViewer->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ImageViewer);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
+        menuEdit = new QMenu(menuBar);
+        menuEdit->setObjectName(QStringLiteral("menuEdit"));
         ImageViewer->setMenuBar(menuBar);
         mainToolBar = new QToolBar(ImageViewer);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -79,8 +89,11 @@ public:
         ImageViewer->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
+        menuBar->addAction(menuEdit->menuAction());
         menuFile->addAction(actionOpen);
         menuFile->addAction(actionClose);
+        menuEdit->addAction(actionMirror);
+        menuEdit->addAction(actionReversed_colours);
 
         retranslateUi(ImageViewer);
 
@@ -92,8 +105,11 @@ public:
         ImageViewer->setWindowTitle(QApplication::translate("ImageViewer", "ImageViewer", Q_NULLPTR));
         actionOpen->setText(QApplication::translate("ImageViewer", "Open", Q_NULLPTR));
         actionClose->setText(QApplication::translate("ImageViewer", "Close", Q_NULLPTR));
+        actionMirror->setText(QApplication::translate("ImageViewer", "Mirror", Q_NULLPTR));
+        actionReversed_colours->setText(QApplication::translate("ImageViewer", "Negative", Q_NULLPTR));
         label->setText(QString());
         menuFile->setTitle(QApplication::translate("ImageViewer", "File", Q_NULLPTR));
+        menuEdit->setTitle(QApplication::translate("ImageViewer", "Edit", Q_NULLPTR));
     } // retranslateUi
 
 };

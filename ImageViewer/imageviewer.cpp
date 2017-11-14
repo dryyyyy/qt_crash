@@ -1,5 +1,6 @@
 #include "imageviewer.h"
-
+#include <QImageReader>
+#include <QMessageBox>
 
 
 ImageViewer::ImageViewer(QWidget *parent)
@@ -40,11 +41,34 @@ void ImageViewer::on_actionOpen_triggered() {
 		}
 		else
 		{
-			//handle error
+			QMessageBox::warning(this, QGuiApplication::applicationDisplayName(), tr("cannot open the file"));
 		}
+		
+		
 	}
 }
 
+void ImageViewer::on_actionMirror_triggered()
+{
+	const QPixmap *pixmap = ui.label->pixmap();
+	if (pixmap)
+	{
+		QImage image(pixmap->toImage());
+		QImage mirrored = image.mirrored();
+		ui.label->setPixmap(QPixmap::fromImage(mirrored));
+	}
+}
+
+void ImageViewer::on_actionNegative_triggered()
+{
+	const QPixmap *pixmap = ui.label->pixmap();
+	if (pixmap)
+	{
+		QImage image(pixmap->toImage());
+		QImage reversed = image.invertPixels(QImage::InvertRgb);
+		ui.label->setPixmap(QPixmap::fromImage(reversed));
+	}
+}
 
 
 ImageViewer::~ImageViewer()
