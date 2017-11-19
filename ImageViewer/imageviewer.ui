@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>677</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,28 +23,22 @@
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>50</y>
-      <width>361</width>
-      <height>231</height>
+      <x>30</x>
+      <y>80</y>
+      <width>120</width>
+      <height>80</height>
      </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>true</bool>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
     </property>
     <widget class="QWidget" name="scrollAreaWidgetContents">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>359</width>
-       <height>229</height>
+       <width>118</width>
+       <height>78</height>
       </rect>
      </property>
     </widget>
@@ -52,17 +46,14 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>120</y>
-      <width>359</width>
-      <height>189</height>
+      <x>120</x>
+      <y>220</y>
+      <width>211</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -71,7 +62,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>677</width>
      <height>21</height>
     </rect>
    </property>
@@ -80,6 +71,8 @@
      <string>File</string>
     </property>
     <addaction name="actionOpen"/>
+    <addaction name="actionsave"/>
+    <addaction name="actionSave_as"/>
     <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
@@ -87,7 +80,9 @@
      <string>Edit</string>
     </property>
     <addaction name="actionMirror"/>
-    <addaction name="actionReversed_colours"/>
+    <addaction name="actionNegative"/>
+    <addaction name="actionTurn_clockwise"/>
+    <addaction name="actionTurn_counter_clockwise"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -116,9 +111,29 @@
     <string>Mirror</string>
    </property>
   </action>
-  <action name="actionReversed_colours">
+  <action name="actionNegative">
    <property name="text">
     <string>Negative</string>
+   </property>
+  </action>
+  <action name="actionTurn_clockwise">
+   <property name="text">
+    <string>Turn clockwise</string>
+   </property>
+  </action>
+  <action name="actionTurn_counter_clockwise">
+   <property name="text">
+    <string>Turn counter clockwise</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Save as</string>
    </property>
   </action>
  </widget>

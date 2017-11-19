@@ -1,3 +1,12 @@
-﻿  imageviewer.cpp
-imageviewer.cpp(68): error C2440: 'initializing': cannot convert from 'void' to 'QImage'
-  imageviewer.cpp(68): note: Expressions of type void cannot be converted to other types
+﻿  Moc'ing imageviewer.h...
+  Uic'ing imageviewer.ui...
+  Rcc'ing imageviewer.qrc...
+RCC : warning : No resources in 'C:\Users\╨Ф╨╕╨╝╨░\Documents\Visual Studio 2015\Projects\ImageViewer\ImageViewer\imageviewer.qrc'.
+  
+  moc_imageviewer.cpp
+  imageviewer.cpp
+  main.cpp
+  Generating Code...
+  qrc_imageviewer.cpp
+  ImageViewer.vcxproj -> C:\Users\Дима\Documents\Visual Studio 2015\Projects\ImageViewer\x64\Debug\ImageViewer.exe
+  ImageViewer.vcxproj -> C:\Users\Дима\Documents\Visual Studio 2015\Projects\ImageViewer\x64\Debug\ImageViewer.pdb (Full PDB)
